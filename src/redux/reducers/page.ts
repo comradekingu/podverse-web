@@ -1,6 +1,6 @@
 import { actionTypes } from '~/redux/constants'
 
-export default (state = {}, action) => {
+const page = (state = {}, action) => {
 
   switch (action.type) {
     case actionTypes.PAGE_IS_LOADING:
@@ -12,3 +12,5 @@ export default (state = {}, action) => {
       return state
   }
 }
+
+export default page

@@ -44,6 +44,7 @@ class PVNavBar extends Component<Props, State> {
         as: PV.paths.web.search,
         href: PV.paths.web.search,
         icon: 'search',
+        key: 'nav-items-search',
         onClick: () => { this.linkClick() },
         hideMobile: true
       }
@@ -220,17 +221,15 @@ class PVNavBar extends Component<Props, State> {
     const navItems = this.navItems()
 
     return (
-
-        <Navbar
-          brandAs='/'
-          brandHref='/'
-          brandHideText={true}
-          brandText='Podverse'
-          dropdowns={dropdowns}
-          handleLinkClick={this.linkClick}
-          isDarkMode={uiTheme === PV.attributes.dark}
-          navItems={navItems} />
-
+      <Navbar
+        brandAs='/'
+        brandHref='/'
+        brandHideText={true}
+        brandText='Podverse'
+        dropdowns={dropdowns}
+        handleLinkClick={this.linkClick}
+        isDarkMode={uiTheme === PV.attributes.dark}
+        navItems={navItems} />
     )
   }
 }

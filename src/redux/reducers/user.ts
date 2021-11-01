@@ -1,6 +1,6 @@
 import { actionTypes } from '~/redux/constants'
 
-export default (state = {} as any, action) => {
+const user = (state = {} as any, action) => {
 
   switch (action.type) {
     case actionTypes.USER_SET_INFO:
@@ -40,3 +40,5 @@ export default (state = {} as any, action) => {
   }
 
 }
+
+export default user

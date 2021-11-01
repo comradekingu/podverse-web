@@ -1,6 +1,6 @@
 import { actionTypes } from '~/redux/constants'
 
-export default (state = {}, action) => {
+const settings = (state = {}, action) => {
 
   switch (action.type) {
     case actionTypes.SETTINGS_CENSOR_NSFW_TEXT:
@@ -27,3 +27,5 @@ export default (state = {}, action) => {
       return state
   }
 }
+
+export default settings

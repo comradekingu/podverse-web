@@ -33,7 +33,7 @@ const generateDataObj = payload => {
   return {}
 }
 
-export default (state = {}, action) => {
+const pages = (state = {}, action) => {
   switch (action.type) {
     case actionTypes.PAGES_CLEAR_QUERY_STATE:
       if (!action.payload.pageKey) {
@@ -63,3 +63,5 @@ export default (state = {}, action) => {
       return state
   }
 }
+
+export default pages

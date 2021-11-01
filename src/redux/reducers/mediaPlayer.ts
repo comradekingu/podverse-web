@@ -1,6 +1,6 @@
 import { actionTypes } from '~/redux/constants'
 
-export default (state = {}, action) => {
+const mediaPlayer = (state = {}, action) => {
 
   switch (action.type) {
     case actionTypes.MEDIA_PLAYER_SET_CLIP_FINISHED:
@@ -30,3 +30,5 @@ export default (state = {}, action) => {
       return state
   }
 }
+
+export default mediaPlayer

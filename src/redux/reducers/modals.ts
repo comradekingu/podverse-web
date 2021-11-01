@@ -14,7 +14,7 @@ const defaultState = {
   support: {}
 }
 
-export default (state = defaultState, action) => {
+const modals = (state = defaultState, action) => {
 
   switch (action.type) {
     case actionTypes.MODALS_ADD_TO_SHOW:
@@ -262,3 +262,5 @@ export default (state = defaultState, action) => {
       return state
   }
 }
+
+export default modals

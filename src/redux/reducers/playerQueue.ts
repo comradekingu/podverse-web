@@ -1,6 +1,6 @@
 import { actionTypes } from '~/redux/constants'
 
-export default (state: any = {}, action) => {
+const playerQueue = (state: any = {}, action) => {
 
   switch (action.type) {
     case actionTypes.PLAYER_QUEUE_LOAD_ITEMS:
@@ -18,3 +18,5 @@ export default (state: any = {}, action) => {
   }
   
 }
+
+export default playerQueue
