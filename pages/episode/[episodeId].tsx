@@ -26,6 +26,7 @@ import { getEpisodeById } from '~/services/episode'
 import { getMediaRefsByQuery } from '~/services/mediaRef'
 import { getDefaultServerSideProps } from '~/services/serverSideHelpers'
 import { getEpisodeProxyActivityPub } from '~/services/socialInteraction/activityPub'
+import { getTwitterComments } from '~/services/socialInteraction/twitter'
 
 interface ServerProps extends Page {
   serverClips: MediaRef[]
@@ -82,9 +83,15 @@ export default function Episode({
         const activityPub = serverEpisode.socialInteraction.find(
           (item: SocialInteraction) => item.platform === PV.SocialInteraction.platformKeys.activitypub
         )
+        const twitterComments = serverEpisode.socialInteraction.find(
+          (item: SocialInteraction) => item.platform === PV.SocialInteraction.platformKeys.twitter
+        )
+
         if (activityPub?.url) {
           const comment = await getEpisodeProxyActivityPub(serverEpisode.id)
           setComment(comment)
+        } else if (twitterComments?.url) {
+          const comment = await getTwitterComments(twitterComments.url)
         }
       }
 
